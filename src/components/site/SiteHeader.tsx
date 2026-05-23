@@ -5,6 +5,7 @@ import { useTheme } from "./ThemeProvider";
 
 const nav = [
   { to: "/programs", label: "Programs" },
+  { to: "/pricing", label: "Pricing" },
   { to: "/about", label: "About" },
   { to: "/gallery", label: "Gallery" },
   { to: "/testimonials", label: "Stories" },
@@ -20,7 +21,7 @@ export function SiteHeader() {
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
           <div className="size-10 bg-brand-blue rounded-xl flex items-center justify-center text-white font-bold text-xl font-display">A</div>
-          <span className="font-display text-xl font-bold tracking-tight uppercase">Arizen</span>
+          <span className="font-display text-xl font-bold tracking-tight uppercase">Ascend Academy</span>
         </Link>
 
         <div className="hidden md:flex items-center gap-8 font-medium text-sm uppercase tracking-wider">

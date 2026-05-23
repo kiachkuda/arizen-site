@@ -9,7 +9,7 @@ export function SiteFooter() {
           <div className="col-span-2">
             <div className="flex items-center gap-2 mb-6">
               <div className="size-8 bg-brand-blue rounded-lg flex items-center justify-center text-white font-bold text-lg font-display">A</div>
-              <span className="font-display text-lg font-bold tracking-tight uppercase">Arizen Academy</span>
+              <span className="font-display text-lg font-bold tracking-tight uppercase">Ascend Academy</span>
             </div>
             <p className="text-muted-foreground max-w-sm mb-6">
               Championing the next generation through a unique fusion of athletic mastery and digital fluency.
@@ -39,6 +39,7 @@ export function SiteFooter() {
               <li><Link to="/programs/soccer" className="hover:text-brand-blue transition-colors">Soccer Academy</Link></li>
               <li><Link to="/programs/gymnastics" className="hover:text-brand-blue transition-colors">Gymnastics</Link></li>
               <li><Link to="/programs/digital" className="hover:text-brand-blue transition-colors">Digital Skills</Link></li>
+              <li><Link to="/programs/homeschool" className="hover:text-brand-blue transition-colors">Home Schooling</Link></li>
               <li><Link to="/programs" className="hover:text-brand-blue transition-colors">All Programs</Link></li>
             </ul>
           </div>
@@ -46,6 +47,7 @@ export function SiteFooter() {
             <h4 className="font-bold mb-6">Academy</h4>
             <ul className="space-y-3 text-muted-foreground text-sm">
               <li><Link to="/about" className="hover:text-brand-blue transition-colors">About Us</Link></li>
+              <li><Link to="/pricing" className="hover:text-brand-blue transition-colors">Pricing</Link></li>
               <li><Link to="/admissions" className="hover:text-brand-blue transition-colors">Admissions</Link></li>
               <li><Link to="/testimonials" className="hover:text-brand-blue transition-colors">Testimonials</Link></li>
               <li><Link to="/contact" className="hover:text-brand-blue transition-colors">Contact</Link></li>
@@ -53,7 +55,7 @@ export function SiteFooter() {
           </div>
         </div>
         <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} Arizen Private Academy. All excellence reserved.</p>
+          <p>© {new Date().getFullYear()} Ascend Private Academy. All excellence reserved.</p>
           <div className="flex gap-6">
             <a href="#">Privacy</a>
             <a href="#">Terms</a>
