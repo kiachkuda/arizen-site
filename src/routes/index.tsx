@@ -7,7 +7,7 @@ import imgSoccer from "@/assets/program-soccer.jpg";
 import imgGym from "@/assets/program-gymnastics.jpg";
 import imgDigital from "@/assets/program-digital.jpg";
 import imgLab from "@/assets/innovation-lab.jpg";
-import g1 from "@/assets/gallery-1.jpg";
+import g1 from "@/assets/gallery-1.JPG";
 import g3 from "@/assets/gallery-3.jpg";
 import { StatCounter } from "@/components/site/StatCounter";
 import { SectionHeading } from "@/components/site/SectionHeading";
