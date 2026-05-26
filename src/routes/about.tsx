@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { Shield, Lightbulb, Users, Award, ArrowRight } from "lucide-react";
 import { SectionHeading } from "@/components/site/SectionHeading";
-import g1 from "@/assets/gallery-1.JPG";
+import g1 from "@/assets/gallery-1.jpg";
 
 const values = [
   { icon: Shield, title: "Discipline", desc: "Every champion is built on consistent practice and integrity." },
