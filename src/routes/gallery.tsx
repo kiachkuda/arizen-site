@@ -1,36 +1,22 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import g1 from "@/assets/gallery-1.jpg";
-import g2 from "@/assets/gallery-3.jpg";
-import g3 from "@/assets/sp1.jpg";
-import g4 from "@/assets/sp.jpg";
-import g5 from "@/assets/sp2.jpg";
+import g2 from "@/assets/gallery-2.jpg";
+import g3 from "@/assets/gallery-3.jpg";
+import g4 from "@/assets/gallery-4.jpg";
+import g5 from "@/assets/gallery-5.jpg";
 import g6 from "@/assets/gallery-6.jpg";
 import imgSoccer from "@/assets/program-soccer.jpg";
 import imgGym from "@/assets/program-gymnastics.jpg";
 import imgDigital from "@/assets/program-digital.jpg";
 import imgLab from "@/assets/innovation-lab.jpg";
 
-export const Route = createFileRoute("/gallery")({
-  head: () => ({
-    meta: [
-      { title: "Gallery — Arizen Academy" },
-      { name: "description", content: "Photos from training sessions, competitions, coding labs, and academy events." },
-      { property: "og:title", content: "Academy Gallery" },
-      { property: "og:description", content: "Inside life at Arizen Academy." },
-      { property: "og:url", content: "/gallery" },
-    ],
-    links: [{ rel: "canonical", href: "/gallery" }],
-  }),
-  component: GalleryPage,
-});
-
 const items = [
   { src: g1, span: "row-span-2", alt: "Soccer training at dawn" },
-  { src: g2, span: "", alt: "Coding workshop" },
-  { src: g3, span: "", alt: "Gymnastics balance" },
+  { src: g3, span: "", alt: "Coding workshop" },
+  { src: g2, span: "", alt: "Gymnastics balance" },
   { src: imgLab, span: "row-span-2", alt: "Innovation lab" },
-  { src: g4, span: "", alt: "Ball Control" },
+  { src: g4, span: "", alt: "Award ceremony" },
   { src: g5, span: "", alt: "Soccer drill" },
   { src: imgSoccer, span: "", alt: "Boot and ball" },
   { src: g6, span: "row-span-2", alt: "Robotics presentation" },
@@ -41,10 +27,18 @@ const items = [
 function GalleryPage() {
   return (
     <>
+      <Helmet>
+        <title>{"Gallery — Ascend Academy"}</title>
+        <meta name="description" content={"Photos from training sessions, competitions, coding labs, and academy events."} />
+        <meta property="og:title" content={"Academy Gallery"} />
+        <meta property="og:description" content={"Inside life at Ascend Academy."} />
+        <meta property="og:url" content={"/gallery"} />
+        <link rel="canonical" href={"/gallery"} />
+      </Helmet>
       <section className="hero-gradient py-20 md:py-28 px-6 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-blue mb-3">Inside the Academy</p>
         <h1 className="font-display text-5xl md:text-6xl font-extrabold mb-6 text-balance">
-          A look at <span className="text-gradient">life at Arizen.</span>
+          A look at <span className="text-gradient">life at Ascend.</span>
         </h1>
       </section>
 
@@ -70,3 +64,5 @@ function GalleryPage() {
     </>
   );
 }
+
+export default GalleryPage;

@@ -1,22 +1,9 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { Check, Trophy, Sparkles, Code2, Dumbbell, School, ArrowRight } from "lucide-react";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { TrialModal } from "@/components/site/TrialModal";
-
-export const Route = createFileRoute("/pricing")({
-  head: () => ({
-    meta: [
-      { title: "Packages & Pricing — Ascend Academy" },
-      { name: "description", content: "Transparent per-session pricing for ICT, Football, Gymnastics, Personal Training and School Setup packages at Ascend Academy." },
-      { property: "og:title", content: "Packages & Pricing" },
-      { property: "og:description", content: "Per-session rates for every Ascend Academy program." },
-      { property: "og:url", content: "/pricing" },
-    ],
-    links: [{ rel: "canonical", href: "/pricing" }],
-  }),
-  component: PricingPage,
-});
 
 type Pkg = {
   name: string;
@@ -90,6 +77,14 @@ const fmt = new Intl.NumberFormat("en-KE");
 function PricingPage() {
   return (
     <>
+      <Helmet>
+        <title>{"Packages & Pricing — Ascend Academy"}</title>
+        <meta name="description" content={"Transparent per-session pricing for ICT, Football, Gymnastics, Personal Training and School Setup packages at Ascend Academy."} />
+        <meta property="og:title" content={"Packages & Pricing"} />
+        <meta property="og:description" content={"Per-session rates for every Ascend Academy program."} />
+        <meta property="og:url" content={"/pricing"} />
+        <link rel="canonical" href={"/pricing"} />
+      </Helmet>
       <section className="hero-gradient py-20 md:py-28 px-6 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-blue mb-3">Packages & Pricing</p>
         <h1 className="font-display text-5xl md:text-6xl font-extrabold mb-6 text-balance max-w-3xl mx-auto">
@@ -218,3 +213,5 @@ function PricingPage() {
     </>
   );
 }
+
+export default PricingPage;

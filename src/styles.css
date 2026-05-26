@@ -72,15 +72,15 @@
 }
 
 .dark {
-  --background: #0B1120;
+  --background: #070e1d;
   --foreground: #F8FAFC;
-  --card: #0F172A;
+  --card: #101b33;
   --card-foreground: #F8FAFC;
   --popover: #0F172A;
   --popover-foreground: #F8FAFC;
   --primary: #3B82F6;
   --primary-foreground: #FFFFFF;
-  --secondary: #1E293B;
+  --secondary: #262e3b;
   --secondary-foreground: #F8FAFC;
   --muted: #1E293B;
   --muted-foreground: #94A3B8;

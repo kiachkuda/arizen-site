@@ -1,21 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import { Star, Quote } from "lucide-react";
 import { SectionHeading } from "@/components/site/SectionHeading";
-
-export const Route = createFileRoute("/testimonials")({
-  head: () => ({
-    meta: [
-      { title: "Testimonials — Arizen Academy" },
-      { name: "description", content: "What parents and students say about the Arizen Academy experience." },
-      { property: "og:title", content: "Parent & Student Stories" },
-      { property: "og:description", content: "Real testimonials from the Arizen community." },
-      { property: "og:url", content: "/testimonials" },
-    ],
-    links: [{ rel: "canonical", href: "/testimonials" }],
-  }),
-  component: TestimonialsPage,
-});
 
 const testimonials = [
   { name: "Eleanor Sinclair", role: "Parent · Tech Lead", quote: "My daughter learned to tackle complex problems on the pitch and in the coding lab with the same discipline. Genuinely future-ready.", rating: 5, gradient: "from-brand-blue to-brand-violet" },
@@ -29,6 +15,14 @@ const testimonials = [
 function TestimonialsPage() {
   return (
     <>
+      <Helmet>
+        <title>{"Testimonials — Ascend Academy"}</title>
+        <meta name="description" content={"What parents and students say about the Ascend Academy experience."} />
+        <meta property="og:title" content={"Parent & Student Stories"} />
+        <meta property="og:description" content={"Real testimonials from the Ascend community."} />
+        <meta property="og:url" content={"/testimonials"} />
+        <link rel="canonical" href={"/testimonials"} />
+      </Helmet>
       <section className="hero-gradient py-20 md:py-28 px-6 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-blue mb-3">In their words</p>
         <h1 className="font-display text-5xl md:text-6xl font-extrabold mb-6 text-balance max-w-3xl mx-auto">
@@ -81,3 +75,5 @@ function TestimonialsPage() {
     </>
   );
 }
+
+export default TestimonialsPage;

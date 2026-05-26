@@ -1,22 +1,9 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { Shield, Lightbulb, Users, Award, ArrowRight } from "lucide-react";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import g1 from "@/assets/gallery-1.jpg";
-
-export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About — Ascend Academy" },
-      { name: "description", content: "Our mission, vision and the values that drive Ascend Academy's unique fusion of athletic and digital education." },
-      { property: "og:title", content: "About Ascend Academy" },
-      { property: "og:description", content: "Mission, vision and values of the academy." },
-      { property: "og:url", content: "/about" },
-    ],
-    links: [{ rel: "canonical", href: "/about" }],
-  }),
-  component: AboutPage,
-});
 
 const values = [
   { icon: Shield, title: "Discipline", desc: "Every champion is built on consistent practice and integrity." },
@@ -35,6 +22,14 @@ const timeline = [
 function AboutPage() {
   return (
     <>
+      <Helmet>
+        <title>{"About — Ascend Academy"}</title>
+        <meta name="description" content={"Our mission, vision and the values that drive Ascend Academy's unique fusion of athletic and digital education."} />
+        <meta property="og:title" content={"About Ascend Academy"} />
+        <meta property="og:description" content={"Mission, vision and values of the academy."} />
+        <meta property="og:url" content={"/about"} />
+        <link rel="canonical" href={"/about"} />
+      </Helmet>
       <section className="hero-gradient py-20 md:py-28 px-6">
         <div className="max-w-5xl mx-auto text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-blue mb-3">Our Story</p>
@@ -128,3 +123,5 @@ function AboutPage() {
     </>
   );
 }
+
+export default AboutPage;

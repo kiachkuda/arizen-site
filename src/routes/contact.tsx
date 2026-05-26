@@ -1,23 +1,17 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { Mail, Phone, MapPin, MessageCircle, Instagram, Twitter, Facebook, Linkedin } from "lucide-react";
-
-export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact — Arizen Academy" },
-      { name: "description", content: "Get in touch with Arizen Academy. Phone, email, WhatsApp and campus location." },
-      { property: "og:title", content: "Contact Arizen Academy" },
-      { property: "og:description", content: "We're here to help. Reach out any time." },
-      { property: "og:url", content: "/contact" },
-    ],
-    links: [{ rel: "canonical", href: "/contact" }],
-  }),
-  component: ContactPage,
-});
+import { Helmet } from "react-helmet-async";
 
 function ContactPage() {
   return (
     <>
+      <Helmet>
+        <title>{"Contact — Ascend Academy"}</title>
+        <meta name="description" content={"Get in touch with Ascend Academy. Phone, email, WhatsApp and campus location."} />
+        <meta property="og:title" content={"Contact Ascend Academy"} />
+        <meta property="og:description" content={"We're here to help. Reach out any time."} />
+        <meta property="og:url" content={"/contact"} />
+        <link rel="canonical" href={"/contact"} />
+      </Helmet>
       <section className="hero-gradient py-20 md:py-28 px-6 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-blue mb-3">Get in touch</p>
         <h1 className="font-display text-5xl md:text-6xl font-extrabold mb-6 text-balance">
@@ -45,7 +39,7 @@ function ContactPage() {
             <div className="p-8 rounded-3xl bg-card border border-border space-y-5">
               <h2 className="font-display text-2xl font-bold mb-2">Contact details</h2>
               {[
-                { icon: Mail, label: "Email", value: "hello@Arizenacademy.com" },
+                { icon: Mail, label: "Email", value: "hello@ascendacademy.com" },
                 { icon: Phone, label: "Phone", value: "+1 (555) 010-0123" },
                 { icon: MapPin, label: "Campus", value: "120 Sterling Ave, Northpoint District" },
               ].map((c) => {
@@ -88,3 +82,5 @@ function ContactPage() {
     </>
   );
 }
+
+export default ContactPage;

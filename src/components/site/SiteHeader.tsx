@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
@@ -26,14 +26,15 @@ export function SiteHeader() {
 
         <div className="hidden md:flex items-center gap-8 font-medium text-sm uppercase tracking-wider">
           {nav.map((n) => (
-            <Link
+            <NavLink
               key={n.to}
               to={n.to}
-              activeProps={{ className: "text-brand-blue" }}
-              className="hover:text-brand-blue transition-colors"
+              className={({ isActive }) =>
+                `hover:text-brand-blue transition-colors ${isActive ? "text-brand-blue" : ""}`
+              }
             >
               {n.label}
-            </Link>
+            </NavLink>
           ))}
           <button
             onClick={toggle}

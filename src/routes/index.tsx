@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { ArrowRight, Trophy, Code2, Sparkles, Check, Star } from "lucide-react";
 import hero from "@/assets/hero-montage.jpg";
@@ -11,21 +12,6 @@ import g3 from "@/assets/gallery-3.jpg";
 import { StatCounter } from "@/components/site/StatCounter";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { TrialModal } from "@/components/site/TrialModal";
-
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Arizen Academy — Building Future Champions" },
-      { name: "description", content: "Elite Soccer, Gymnastics & Digital Skills programs for children ages 5–17. Premium private academy combining sports excellence with future-ready tech education." },
-      { property: "og:title", content: "Arizen Academy" },
-      { property: "og:description", content: "Building future champions on and off the field." },
-      { property: "og:image", content: hero },
-      { property: "og:url", content: "/" },
-    ],
-    links: [{ rel: "canonical", href: "/" }],
-  }),
-  component: HomePage,
-});
 
 const programs = [
   {
@@ -64,6 +50,15 @@ const programs = [
 function HomePage() {
   return (
     <>
+      <Helmet>
+        <title>{"Ascend Academy — Building Future Champions"}</title>
+        <meta name="description" content={"Elite Soccer, Gymnastics & Digital Skills programs for children ages 5–17. Premium private academy combining sports excellence with future-ready tech education."} />
+        <meta property="og:title" content={"Ascend Academy"} />
+        <meta property="og:description" content={"Building future champions on and off the field."} />
+        <meta property="og:image" content={hero} />
+        <meta property="og:url" content={"/"} />
+        <link rel="canonical" href={"/"} />
+      </Helmet>
       {/* Hero */}
       <section className="hero-gradient relative pt-12 md:pt-20 pb-24 md:pb-32 px-6 overflow-hidden">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -230,7 +225,7 @@ function HomePage() {
           <div>
             <SectionHeading eyebrow="Trusted by Families" title="A school where parents see the difference, weekly." />
             <p className="text-muted-foreground mb-8">
-              Hear from the families who chose Arizen to invest in their children's future — on the field, in the gym, and in the lab.
+              Hear from the families who chose Ascend to invest in their children's future — on the field, in the gym, and in the lab.
             </p>
             <Link to="/testimonials" className="text-brand-blue font-bold inline-flex items-center gap-2 hover:gap-3 transition-all underline underline-offset-8">
               Read all stories <ArrowRight className="size-4" />
@@ -245,7 +240,7 @@ function HomePage() {
               {[...Array(5)].map((_, i) => <Star key={i} className="size-5 fill-brand-blue text-brand-blue" />)}
             </div>
             <p className="text-xl md:text-2xl font-display leading-relaxed mb-8 text-balance">
-              "My daughter learned to tackle complex problems on the pitch and in the coding lab with the same discipline. Arizen is genuinely future-ready."
+              "My daughter learned to tackle complex problems on the pitch and in the coding lab with the same discipline. Ascend is genuinely future-ready."
             </p>
             <div className="flex items-center gap-4">
               <div className="size-12 rounded-full bg-gradient-to-br from-brand-blue to-brand-violet" />
@@ -303,3 +298,5 @@ function HomePage() {
     </>
   );
 }
+
+export default HomePage;

@@ -1,21 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Check, ChevronDown } from "lucide-react";
 import { SectionHeading } from "@/components/site/SectionHeading";
-
-export const Route = createFileRoute("/admissions")({
-  head: () => ({
-    meta: [
-      { title: "Admissions — Arizen Academy" },
-      { name: "description", content: "Apply now. Simple, 3-step admissions for Soccer, Gymnastics and Digital Skills programs." },
-      { property: "og:title", content: "Admissions" },
-      { property: "og:description", content: "Apply to Arizen Academy in three simple steps." },
-      { property: "og:url", content: "/admissions" },
-    ],
-    links: [{ rel: "canonical", href: "/admissions" }],
-  }),
-  component: AdmissionsPage,
-});
 
 const steps = [
   { n: "01", title: "Submit interest", desc: "Tell us a bit about your child and pick a program." },
@@ -47,10 +33,18 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 function AdmissionsPage() {
   return (
     <>
+      <Helmet>
+        <title>{"Admissions — Ascend Academy"}</title>
+        <meta name="description" content={"Apply now. Simple, 3-step admissions for Soccer, Gymnastics and Digital Skills programs."} />
+        <meta property="og:title" content={"Admissions"} />
+        <meta property="og:description" content={"Apply to Ascend Academy in three simple steps."} />
+        <meta property="og:url" content={"/admissions"} />
+        <link rel="canonical" href={"/admissions"} />
+      </Helmet>
       <section className="hero-gradient py-20 md:py-28 px-6 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-blue mb-3">Admissions 2026</p>
         <h1 className="font-display text-5xl md:text-6xl font-extrabold mb-6 text-balance max-w-3xl mx-auto">
-          Three steps to <span className="text-gradient">join Arizen.</span>
+          Three steps to <span className="text-gradient">join Ascend.</span>
         </h1>
         <p className="text-lg text-muted-foreground max-w-xl mx-auto">
           Simple, transparent, and stress-free. We're here to guide you through every step.
@@ -103,3 +97,5 @@ function AdmissionsPage() {
     </>
   );
 }
+
+export default AdmissionsPage;
